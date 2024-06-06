@@ -1,12 +1,16 @@
 const router = require("express").Router()
+const userController = require("../controllers/userController")
+const auth = require("../middleware/auth")
 
 // To register
-router.post('/register', (req,res) => {
-    res.send({msg : "Register a User"})
-})
+router.post('/register', userController.registerUser)
 
 // To login
-router.post('/login', (req, res) => {
-    res.send({ msg: "Login a User" })
-})
+router.post('/login', userController.loginUser)
+
+// to verify the token
+router.get('/verify', userController.verifiedToken  )
+
+
+
 module.exports = router
