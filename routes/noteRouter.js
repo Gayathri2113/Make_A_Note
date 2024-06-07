@@ -1,13 +1,16 @@
 const router = require("express").Router()
+const auth = require("../middleware/auth")
+const noteCtrl = require("../controllers/noteController")
 
 router.route('/')
-    .get((req,res) => res.json({msg : "Test Notes"}))
-    .post()
+    .get(auth, noteCtrl.getNotes)
+    .post(auth, noteCtrl.createNotes)
 
 router.route('/:id')
-    .get()
-    .put()
-    .delete()
+    .get(auth,noteCtrl.getNote)
+    .put(auth,noteCtrl.updateNote)
+    .delete(auth, noteCtrl.deleteNote)
 
 
+    
 module.exports = router
