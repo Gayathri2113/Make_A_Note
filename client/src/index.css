@@ -8,7 +8,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: "Roboto Slab", serif;
-  color: white;
+  /* color: white; */
 }
 
 code {
@@ -23,7 +23,6 @@ body{
 .notes-page{
   width: 100%;
   min-height: 100vh;
-
 }
 
 .notes-page header{
@@ -45,7 +44,6 @@ a{
 .notes-page header .logo{
   text-transform: uppercase;
   letter-spacing: 1px;
-
 }
 
 .notes-page header ul li{
@@ -90,7 +88,6 @@ a{
   cursor: pointer;
 }
 
-
 .card .close{
   position: absolute;
   top: 18px;
@@ -112,8 +109,14 @@ a{
 }
 
 .card .text-wrapper{
+  width: 100%;
+  height: 150px;
   font-size: 18px;
   min-height: 70px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  overflow-x: hidden;
+  margin: 10px auto;
 }
 
 .card .date{
@@ -129,4 +132,107 @@ a{
   min-height: 20px;
   letter-spacing: 1px;
   font-size: 15px;
+}
+
+/*     Create Note CSS    */
+
+.create-note{
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.create-note h2{
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.create-note .row{
+  width: 100%;
+  margin: 10px 0;
+}
+
+.create-note input,
+.create-note button{
+  width: 100%;
+  height: 40px;
+  padding: 0 5px;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+.create-note label{
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.create-note textarea{
+  width: 100%;
+  resize: none;
+  padding: 0 5px;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+.create-note button{
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: rgb(7,25,63);
+}
+
+@media (max-width: 500px){
+  .create-note{
+    padding: 15px;
+    border: 5px solid #ccc;
+  }
+}
+
+/* Login and Sign Up*/
+
+.login-page{
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.login input,
+.register input{
+  margin-bottom: 15px;
+}
+
+.login,
+.register{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgb(63,9,63);
+}
+
+.login-page h2,
+.login-page h3{
+  color: #fff8;
+}
+
+.login-page h3{
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 15px;
+}
+
+.loin-page p{
+  margin: 10px 0;
+  color: white;
+}
+
+.login-page span:hover{
+  color: orange;
+  cursor: pointer;
 }
